@@ -1842,6 +1842,7 @@ class BotApi
      * @param ArrayOfInputMedia $media
      * @param int|null $replyToMessageId
      * @param bool $disableNotification
+     * @param array $attach
      *
      * @return array
      * @throws \TelegramBot\Api\Exception
@@ -1850,14 +1851,15 @@ class BotApi
         $chatId,
         $media,
         $disableNotification = false,
-        $replyToMessageId = null
+        $replyToMessageId = null,
+        $attach = []
     ) {
         return ArrayOfMessages::fromResponse($this->call('sendMediaGroup', [
             'chat_id' => $chatId,
             'media' => $media->toJson(),
             'reply_to_message_id' => (int)$replyToMessageId,
             'disable_notification' => (bool)$disableNotification
-        ]));
+        ] + $attach));
     }
 
     /**
