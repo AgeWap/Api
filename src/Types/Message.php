@@ -46,6 +46,7 @@ class Message extends BaseType implements TypeInterface
         'photo' => ArrayOfPhotoSize::class,
         'sticker' => Sticker::class,
         'video' => Video::class,
+        'video_note' => VideoNote::class,
         'voice' => Voice::class,
         'caption' => true,
         'contact' => Contact::class,
