@@ -239,6 +239,13 @@ class Message extends BaseType implements TypeInterface
     protected $video;
 
     /**
+     * Optional. Message is a video note, information about the video note
+     *
+     * @var \TelegramBot\Api\Types\VideoNote
+     */
+    protected $videoNote;
+
+    /**
      * Optional. Message is a voice message, information about the file
      *
      * @var \TelegramBot\Api\Types\Voice
@@ -787,6 +794,22 @@ class Message extends BaseType implements TypeInterface
     public function setVideo(Video $video)
     {
         $this->video = $video;
+    }
+
+    /**
+     * @return VideoNote
+     */
+    public function getVideoNote()
+    {
+        return $this->videoNote;
+    }
+
+    /**
+     * @param VideoNote $videoNote
+     */
+    public function setVideoNote(VideoNote $videoNote)
+    {
+        $this->videoNote = $videoNote;
     }
 
     /**
